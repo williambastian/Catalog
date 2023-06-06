@@ -6,7 +6,8 @@ This repository follows the tutorial series published by Julio Casal, and covers
   - Dependency injection, data transfer objects (DTOs)
   - Implementing POST, GET, PUT, DELETE functionality in REST API
   - Persisting entities with MongoDB / Docker
-  WIP Topics, in progress:
+  
+WIP Topics, in progress:
   - Tasks, Async, Await functionality
   - Health Checks
   - Docker, further in depth
