@@ -75,7 +75,11 @@ namespace Catalog
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog v1"));
             }
 
-            app.UseHttpsRedirection();
+            if (env.IsDevelopment())
+            {
+                app.UseHttpsRedirection();
+            }
+            
 
             app.UseRouting();
 
@@ -94,7 +98,7 @@ namespace Catalog
                                 checks = report.Entries.Select(entry => new {
                                     name = entry.Key,
                                     status = entry.Value.Status.ToString(),
-                                    exception = entry.Value.Exception != null ? entry.Value.Exception.Message: "none",
+                                    exception = entry.Value.Exception != null ? entry.Value.Exception.Message : "none",
                                     duration = entry.Value.Duration.ToString()
                                 })
                             }
