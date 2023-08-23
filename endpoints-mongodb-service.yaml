@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  creationTimestamp: "2023-07-14T18:54:59Z"
+  labels:
+    service.kubernetes.io/headless: ""
+  name: mongodb-service
+  namespace: default
+  resourceVersion: "204870"
+  uid: 5e586cfd-50d9-4442-a94d-a763bf49e233
+subsets:
+- addresses:
+  - hostname: mongodb-statefulset-0
+    ip: 10.1.0.46
+    nodeName: docker-desktop
+    targetRef:
+      kind: Pod
+      name: mongodb-statefulset-0
+      namespace: default
+      uid: 0f930bab-ce8f-470f-98cc-78d6236c6f8d
+  ports:
+  - port: 27017
+    protocol: TCP
